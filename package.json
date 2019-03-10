@@ -3,8 +3,10 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
+    "start": "ng serve --open --configuration=development --progress",
+    "start-prod": "ng serve --open --configuration=production --progress",
+    "build": "ng build --configuration=development --progress",
+    "build-prod": "ng build --configuration=production --progress",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -29,9 +31,9 @@
     "@angular/cli": "~7.3.5",
     "@angular/compiler-cli": "~7.2.0",
     "@angular/language-service": "~7.2.0",
-    "@types/node": "~8.9.4",
     "@types/jasmine": "~2.8.8",
     "@types/jasminewd2": "~2.0.3",
+    "@types/node": "~8.9.4",
     "codelyzer": "~4.5.0",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
