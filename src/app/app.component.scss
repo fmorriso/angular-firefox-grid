@@ -4,6 +4,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+
 }
 .container {
   display: grid;
@@ -20,4 +21,13 @@ body {
   color: #fff;
   border-radius: 4px;
   border: 6px solid #171717;
+}
+
+.text-normal {
+  font-family: consolas, monospace, sans-serif, arial;
+  font-size: 1rem;
+}
+
+.text-center {
+  text-align: center;
 }
