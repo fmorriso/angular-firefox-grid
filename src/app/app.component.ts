@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {AngularVersionInformationService} from './shared/angular-version-information.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-firefox-grid';
+  angularVersion: string;
+  constructor(private ngVersionService: AngularVersionInformationService){
+    this.angularVersion = ngVersionService.versionFull;
+  }
 }
