@@ -1,36 +1,56 @@
-body {
-  background-color: #3b404e;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+$color-purple: #6C52D9;
+$color-light-purple: #9B8AE6;
+$color-light-blue: #1EAAFC;
+$color-aqua: #3EDFD7;
+$color-green: #29A49D;
+$color-white: #ffffff;
 
-}
+$color-border: #171717;
+$color-background: #3b404e;
+
+/* grid sizing and positioning styles */
 .container {
   display: grid;
-  width: 800px;
-  grid-template-columns: repeat(3, 1fr);
-  //grid-template-rows: 200px 100px;
-  grid-auto-rows: 100px;
+  width: 750px;
+  height: 600px;
+  grid-template-columns: 200px 1fr 1fr;
+  grid-template-rows: 80px 1fr 1fr 100px;
   grid-gap: 1rem;
 }
 
-.item {
-  background-color: #1EAAFC;
-  background-image: linear-gradient(130deg, #6C52D9 0%, #1EAAFC 85%, #3EDFD7 100%);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-  color: #fff;
-  border-radius: 4px;
-  border: 6px solid #171717;
+/* header is first row, spanning all four columns */
+.header {
+  grid-row: 1 / 2;
+  grid-column: 1 / 4;
 }
 
-.item1 {
-  grid-row-start: 2;
-  grid-row-end: 3;
-  grid-column-start: 2;
-  grid-column-end: 3;
+/* sidebar spances second and third rows, just first column */
+.sidebar {
+  grid-row: 2 / 4;
+  grid-column: 1 / 2;
 }
 
+.content-1 {
+  grid-row: 2 / 3;
+  grid-column: 2 / 4;
+}
+
+.content-2 {
+  grid-row: 3 / 4;
+  grid-column: 2 / 3;
+}
+
+.content-3 {
+  grid-row: 3 / 4;
+  grid-column: 3 / 4;
+}
+
+.footer {
+  grid-row: 4 / 5;
+  grid-column: 1 / 4;
+}
+
+/* normal styles below here */
 .text-normal {
   font-family: consolas, monospace, sans-serif, arial;
   font-size: 1rem;
@@ -38,4 +58,48 @@ body {
 
 .text-center {
   text-align: center;
+}
+
+
+body {
+  padding: 200px;
+  background-color: $color-background;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  font-family: consolas,-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+
+.item {
+  background-color: $color-light-blue;
+  background-image: linear-gradient(130deg, $color-purple 0%, $color-light-blue 85%, $color-aqua 100%);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  color: $color-white;
+  border-radius: 4px;
+  border: 6px solid $color-border;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.header {
+  background-color: $color-light-blue;
+  background-image: linear-gradient(160deg, $color-purple 0%, $color-light-purple 127%);
+}
+
+.sidebar {
+  background-image: linear-gradient(203deg, $color-aqua 0%, $color-green 90%)
+}
+
+.content-1,
+.content-2,
+.content-3 {
+  background-image: linear-gradient(130deg, $color-purple 0%, $color-light-blue 85%, $color-aqua 100%);
+}
+
+.footer {
+  background-color: $color-purple;
+  background-image: linear-gradient(160deg, $color-purple 0%, $color-light-purple 127%);
 }
