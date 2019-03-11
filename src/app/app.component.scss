@@ -9,8 +9,9 @@ body {
 .container {
   display: grid;
   width: 800px;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 150px 150px;
+  grid-template-columns: repeat(3, 1fr);
+  //grid-template-rows: 200px 100px;
+  grid-auto-rows: 100px;
   grid-gap: 1rem;
 }
 
@@ -21,6 +22,13 @@ body {
   color: #fff;
   border-radius: 4px;
   border: 6px solid #171717;
+}
+
+.item1 {
+  grid-row-start: 2;
+  grid-row-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 3;
 }
 
 .text-normal {
